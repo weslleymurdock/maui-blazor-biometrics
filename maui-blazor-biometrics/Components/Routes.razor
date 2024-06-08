@@ -1,0 +1,13 @@
+﻿@using System.ComponentModel
+<Router AppAssembly="@typeof(MauiProgram).Assembly">
+    <Found Context="routeData">
+        <CascadingValue Value="@ViewModel">
+            <RouteView RouteData="@routeData" DefaultLayout="@typeof(Layout.MainLayout)" />
+            <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+        </CascadingValue>
+    </Found>
+</Router>
+@code {
+    [Parameter]
+    public INotifyPropertyChanged? ViewModel { get; set; }
+}

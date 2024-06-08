@@ -1,0 +1,23 @@
+﻿@page "/" 
+@using System.ComponentModel
+@using Plugin.Fingerprint
+@using Plugin.Fingerprint.Abstractions
+@using maui_blazor_biometrics.ViewModels
+
+
+@if (_mainViewModel is not null)
+{
+
+    <h3>Blazor Label:</h3>
+    <h4>@_mainViewModel.Title</h4>
+}
+
+<h4># registrations of MainViewModel:</h4>
+<ul>
+    @foreach (var reg in Registrations.ViewModelRegistrations)
+    {
+        <li><code>@reg</code></li>
+    }
+</ul>
+
+  <button @onclick="Login" >Login</button>
